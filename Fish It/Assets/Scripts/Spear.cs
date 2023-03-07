@@ -29,7 +29,7 @@ public class Spear : MonoBehaviour
         if (transform.position.y < 2f)
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            // fire splash sfx here
+            // fire splash sfx event here
             rb.drag = waterDrag;
         }
         else
