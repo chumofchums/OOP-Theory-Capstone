@@ -5,8 +5,7 @@ public class Fishy : MonoBehaviour
 
     private Vector3 targetPosition;
     private float speed = 2f;
-    private float maxX = 5f;
-    private float minX = -5f;
+    private float targetPositionX = 5f;
     private float minY = -4f;
     private float maxY = 1f;
     private float clampValue = 2f;
@@ -19,23 +18,27 @@ public class Fishy : MonoBehaviour
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
     }
 
-
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        Swim();
 
         UpdateTargetPosition();
         FlipSprite();
     }
 
-    public virtual void UpdateTargetPosition()
+    private void Swim()
     {
-        // Calculate a new random position if the fish has reached the target
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
+
+    private void UpdateTargetPosition()
+    {
+        // Calculate a new random position if the fish has reached the targetPosition
         if (transform.position == targetPosition)
         {
             // Generate a new random Y position between -4 & +1 
             float randomY = Mathf.Clamp(Random.Range(-clampValue, clampValue), minY, maxY);
-            targetPosition = new Vector3(Random.Range(minX, maxX), randomY, 0f);
+            targetPosition = new Vector3(Random.Range(-targetPositionX, targetPositionX), randomY, 0f);
         }
     }
 

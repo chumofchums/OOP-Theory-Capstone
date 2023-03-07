@@ -738,7 +738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spearPrefab: {fileID: 5801070620577109071, guid: d4574f0d3b3dade419d17d0bdf807af5, type: 3}
   shootForce: 10
-  destroyDepth: -5.5
 --- !u!1 &1622979984
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,11 +786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297296132581656631, guid: e1c53ab3b2e8bbc4c94824b012684288, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.81
+      value: -5.31
       objectReference: {fileID: 0}
     - target: {fileID: 4297296132581656631, guid: e1c53ab3b2e8bbc4c94824b012684288, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.56
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 4297296132581656631, guid: e1c53ab3b2e8bbc4c94824b012684288, type: 3}
       propertyPath: m_LocalPosition.z
