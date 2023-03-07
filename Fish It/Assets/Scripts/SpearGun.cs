@@ -4,11 +4,18 @@ using UnityEngine;
 public class SpearGun : MonoBehaviour
 {
     public GameObject spearPrefab;
-    public float shootForce = 10f;
-    
+    private float shootForce = 10f;
+
+    private float reloadTime;
+    private float reloadTimeMax = 1f;
+
+
 
     private void Update()
     {
+        reloadTime -= Time.deltaTime;
+
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -20,12 +27,21 @@ public class SpearGun : MonoBehaviour
 
     private void FireSpear(Vector3 mousePosition)
     {
-        GameObject spear = Instantiate(spearPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D rb = spear.GetComponent<Rigidbody2D>();
+        if (reloadTime <= 0)
+        {
+            reloadTime = reloadTimeMax;
 
-        Vector2 shootDirection = (mousePosition - transform.position).normalized;
-        rb.AddForce(shootDirection * shootForce, ForceMode2D.Impulse);
+            GameObject spear = Instantiate(spearPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rb = spear.GetComponent<Rigidbody2D>();
 
-        float targetAngle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+            Vector2 shootDirection = (mousePosition - transform.position).normalized;
+            rb.AddForce(shootDirection * shootForce, ForceMode2D.Impulse);
+
+            float targetAngle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+        }
+        else
+        {
+            return;
+        }
     }
 }
