@@ -24,6 +24,7 @@ public class Spear : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // Add drag once it gets below 2Y/ aka enters the water
         if (transform.position.y < 2f)
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
