@@ -13,6 +13,7 @@ public class Spear : MonoBehaviour
         if (fish != null)
         {
             Destroy(fish.gameObject);
+            // Fire death sfx event here
             Destroy(gameObject);
         }
     }
@@ -28,6 +29,7 @@ public class Spear : MonoBehaviour
         if (transform.position.y < 2f)
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            // fire splash sfx here
             rb.drag = waterDrag;
         }
         else
