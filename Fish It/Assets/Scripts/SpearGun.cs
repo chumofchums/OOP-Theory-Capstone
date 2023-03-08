@@ -14,6 +14,10 @@ public class SpearGun : MonoBehaviour
 
     public static event EventHandler OnFireAndReload;
 
+    private void Start()
+    {
+        reloadTime = 1f;
+    }
 
 
     private void Update()

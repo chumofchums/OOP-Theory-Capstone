@@ -6,6 +6,9 @@ public class RedFish : Fishy
 {
     [SerializeField] float redSpeed = 2.5f;
 
+    private float redMinY = -2f;
+    private float redMaxY = 1f;
+
     // POLYMORPHISM
     public override void Swim()
     {
@@ -18,7 +21,7 @@ public class RedFish : Fishy
         if (transform.position == targetPosition)
         {
             // Generate a new random Y position between -4 & +1 
-            float randomY = Mathf.Clamp(Random.Range(-2, 2), -4, -1);
+            float randomY = Mathf.Clamp(Random.Range(-2, 2), redMinY, redMaxY);
             targetPosition = new Vector3(Random.Range(-targetPositionX, targetPositionX), randomY, 0f);
         }
     }

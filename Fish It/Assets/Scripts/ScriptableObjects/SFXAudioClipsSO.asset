@@ -15,4 +15,5 @@ MonoBehaviour:
   shootAndReload: {fileID: 8300000, guid: a977cc059a1503145ba16999829a0a5e, type: 3}
   spawnBubbles: []
   fishDeath:
-  - {fileID: 8300000, guid: 0a8750903460f2e489d5fdc8b7d21d61, type: 3}
+  - {fileID: 8300000, guid: 7035a06949a97684fa013bbefdd37d7b, type: 3}
+  - {fileID: 8300000, guid: dae45c3a0a1fa5744bc4cc5fee3e305d, type: 3}
