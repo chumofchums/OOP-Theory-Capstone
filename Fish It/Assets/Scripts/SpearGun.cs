@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
 public class SpearGun : MonoBehaviour
@@ -6,8 +6,10 @@ public class SpearGun : MonoBehaviour
     public GameObject spearPrefab;
     private float shootForce = 10f;
 
-    public float reloadTime {  get; private set; }
-    public  float reloadTimeMax { get; private set; } = 1f;
+    public float reloadTime { get; private set; }
+    public float reloadTimeMax { get; private set; } = 1f;
+
+    public static event EventHandler OnFireAndReload;
 
 
 
@@ -21,7 +23,7 @@ public class SpearGun : MonoBehaviour
             mousePosition.z = 0f;
 
             FireSpear(mousePosition);
-            
+
         }
     }
 
@@ -31,7 +33,7 @@ public class SpearGun : MonoBehaviour
         {
             reloadTime = 0f;
 
-            // Fire Shoot + Reload SFX event here
+            OnFireAndReload?.Invoke(this, EventArgs.Empty);
 
             GameObject spear = Instantiate(spearPrefab, transform.position, Quaternion.identity);
             Rigidbody2D rb = spear.GetComponent<Rigidbody2D>();

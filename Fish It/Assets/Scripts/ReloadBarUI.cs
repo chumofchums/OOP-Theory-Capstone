@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +6,6 @@ public class ReloadBarUI : MonoBehaviour
 
     [SerializeField] private Image barImage;
     [SerializeField] private SpearGun spearGun;
-
 
     private void Start()
     {
@@ -19,5 +16,4 @@ public class ReloadBarUI : MonoBehaviour
     {
         barImage.fillAmount = spearGun.reloadTime / spearGun.reloadTimeMax;
     }
-
 }
