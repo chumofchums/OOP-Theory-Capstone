@@ -25,13 +25,13 @@ public class SoundManager : MonoBehaviour
     {
         SpearGun spearGun = sender as SpearGun;
         Debug.Log("Shoot and Reload");
-        // PlaySound(audioClipRefsSO.shootAndReload, transform.position);
+        PlaySound(audioClipRefsSO.shootAndReload, transform.position);
     }
 
     public void OnFishDeath()
     {
         Debug.Log("Fish Died");
-        // PlaySound(audioClipRefsSO.fishDeath, transform.position);
+        PlaySound(audioClipRefsSO.fishDeath, transform.position);
     }
 
     private void PlaySound(AudioClip audioClip, Vector3 position, float volume = 1f)

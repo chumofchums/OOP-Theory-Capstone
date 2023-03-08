@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f972d12123a1c4d9a4410437b3fd57, type: 3}
   m_Name: SFXAudioClipsSO
   m_EditorClassIdentifier: 
-  shoot: {fileID: 0}
-  reload: {fileID: 0}
+  shootAndReload: {fileID: 8300000, guid: a977cc059a1503145ba16999829a0a5e, type: 3}
   spawnBubbles: []
-  fishDeath: []
+  fishDeath:
+  - {fileID: 8300000, guid: 0a8750903460f2e489d5fdc8b7d21d61, type: 3}
