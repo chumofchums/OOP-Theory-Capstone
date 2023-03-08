@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    // ENCAPSULATION
     public static SoundManager Instance { get; private set; }
 
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
@@ -17,7 +18,6 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         SpearGun.OnFireAndReload += SpearGun_OnFireAndReload;
-
     }
 
 

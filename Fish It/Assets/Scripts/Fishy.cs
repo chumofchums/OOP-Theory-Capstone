@@ -3,9 +3,9 @@ using UnityEngine;
 public class Fishy : MonoBehaviour
 {
 
-    private Vector3 targetPosition;
+    public Vector3 targetPosition;
     private float speed = 2f;
-    private float targetPositionX = 5f;
+    public float targetPositionX = 5f;
     private float minY = -4f;
     private float maxY = 1f;
     private float clampValue = 2f;
@@ -20,18 +20,20 @@ public class Fishy : MonoBehaviour
 
     private void Update()
     {
+        // ABSTRACTION
         Swim();
 
         UpdateTargetPosition();
         FlipSprite();
     }
 
-    private void Swim()
+    // POLYMORPHISM
+    public virtual void Swim()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
 
-    private void UpdateTargetPosition()
+    public virtual void UpdateTargetPosition()
     {
         // Calculate a new random position if the fish has reached the targetPosition
         if (transform.position == targetPosition)

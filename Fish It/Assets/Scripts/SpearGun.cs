@@ -6,7 +6,10 @@ public class SpearGun : MonoBehaviour
     public GameObject spearPrefab;
     private float shootForce = 10f;
 
+    // ENCAPSULATION
     public float reloadTime { get; private set; }
+
+    // ENCAPSULATION
     public float reloadTimeMax { get; private set; } = 1f;
 
     public static event EventHandler OnFireAndReload;
@@ -22,6 +25,7 @@ public class SpearGun : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
 
+            // ABSTRACTION
             FireSpear(mousePosition);
 
         }
